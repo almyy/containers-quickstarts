@@ -13,7 +13,7 @@ RUN INSTALL_PKGS="gettext tar zip unzip hostname java-1.8.0-openjdk" && \
     rpm -V $INSTALL_PKGS && \
     yum clean all  && \
     mkdir -p $KAFKA_HOME && \
-    curl -fSL $(curl -s http://apache.uib.no/kafka/$KAFKA_VERSION/kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz | tar xzf - --strip 1 -C $KAFKA_HOME/ && \
+    curl -fSL $(curl -s http://apache.uib.no/kafka/$KAFKA_VERSION/kafka_$SCALA_VERSION-$KAFKA_VERSION.tgz) | tar xzf - --strip 1 -C $KAFKA_HOME/ && \
     mkdir -p $KAFKA_HOME/logs && \
     /usr/local/bin/fix-permissions $KAFKA_HOME
 
